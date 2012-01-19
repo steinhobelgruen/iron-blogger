@@ -3,12 +3,15 @@ import yaml
 import feedparser
 import datetime
 import sys
+import os
 from dateutil.parser import parse
 import dateutil.tz as tz
 
 with open('bloggers.yml') as f:
     users = yaml.safe_load(f.read())
 
+if not os.path.exists('out'):
+    os.makedirs('out')
 try:
     with open('out/report.yml') as f:
         log = yaml.safe_load(f.read())
