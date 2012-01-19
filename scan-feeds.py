@@ -15,11 +15,13 @@ try:
 except IOError:
     log = {}
 
-START = datetime.datetime(2009, 12, 21, 6)
+START = datetime.datetime(2011, 12, 25, 0)
 
 def parse_published(pub):
-    return parse(pub).astimezone(tz.tzlocal()).replace(tzinfo=None)
-
+    try:
+        return parse(pub).astimezone(tz.tzlocal()).replace(tzinfo=None)
+    except:
+        return parse(pub).replace(tzinfo=None)
 def get_date(post):
     for k in ('published', 'created', 'updated'):
         if k in post:
@@ -30,6 +32,9 @@ def get_link(post):
 
 def parse_feeds(weeks, uri):
     feed = feedparser.parse(uri)
+
+    print >>sys.stderr, "Parsing: %s" % uri
+
     if not feed.entries:
         print >>sys.stderr, "WARN: no entries for ", uri
     for post in feed.entries:
