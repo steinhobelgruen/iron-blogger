@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This Python file uses the following encoding: utf-8
 import render
 import os
 import sys
@@ -7,9 +8,9 @@ import subprocess
 import datetime
 import yaml
 
-XMLRPC_ENDPOINT = 'http://iron-blogger.mit.edu/xmlrpc.php'
-USER            = 'nelhage'
-BLOG_ID         = 1
+XMLRPC_ENDPOINT = 'http://blog-URL.tld/xmlrpc.php' # Wordpress RPC-URL - e.g. http://chaosblog.wordpress.com/xmlrpc.php
+USER = 'username' # wordpress-username
+BLOG_ID         = 0
 
 dry_run = False
 
@@ -25,8 +26,9 @@ with open('ledger', 'a') as f:
     f.write("\n")
     f.write(render.render_template('templates/ledger', date))
 
-subprocess.check_call(["git", "commit", "ledger",
-                       "-m", "Update for %s" % (date,)])
+if not dry_run:
+    subprocess.check_call(["git", "commit", "ledger",
+                           "-m", "Update for %s" % (date,)])
 
 debts = render.get_debts()
 punt = []
@@ -61,7 +63,6 @@ if not dry_run:
 
     x = xmlrpclib.ServerProxy(XMLRPC_ENDPOINT)
     x.metaWeblog.newPost(BLOG_ID, USER, passwd, page, True)
-
 email = render.render_template('templates/email.txt', date, punt=punt)
 
 if dry_run:
@@ -82,3 +83,7 @@ if punt:
 
     subprocess.check_call(["git", "commit", "ledger", "bloggers.yml",
                            "-m", "Punts for %s" % (today,)])
+
+# if it's a dry run, lets set the ledger back to the beginning state
+if dry_run:
+    subprocess.check_call(["git", "checkout", "ledger"])
