@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# This Python file uses the following encoding: utf-8
 import yaml
 from dateutil.parser import parse
 import datetime
@@ -9,7 +10,7 @@ import os.path
 import subprocess
 from mako.template import Template
 
-START = datetime.datetime(2009, 12, 21, 6)
+START = datetime.datetime(2011, 12, 25, 2)
 HERE  = os.path.dirname(__file__)
 
 def get_balance(acct):
@@ -17,7 +18,10 @@ def get_balance(acct):
                           '-n', 'balance', acct],
                          stdout=subprocess.PIPE)
     (out, _) = p.communicate()
-    return float(out.split()[0][1:])
+    try:
+	return int(out.split()[0][1:])
+    except:
+	return 0
 
 def get_debts():
     p = subprocess.Popen(['ledger', '-f', os.path.join(HERE, 'ledger'),
@@ -29,7 +33,7 @@ def get_debts():
         if not line: continue
         (val, acct) = line.split()
         user = acct[len("Pool:Owed:"):]
-        val  = float(val[len("$"):])
+        val  = int(val[len("$"):])
         debts.append((user, val))
     return debts
 
@@ -80,7 +84,9 @@ def render_template(path, week=None, **kwargs):
     for (un, rec) in users.items():
         u = User()
         u.username = un
+        u.name  = rec['name']
         u.links = rec['links']
+        u.start_de = datetime.datetime.strptime(rec['start'],"%Y/%m/%d").strftime("%d.%m.%Y")
         u.start = rec['start']
         u.end   = rec.get('end')
         u.skip  = parse_skip(rec)
