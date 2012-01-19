@@ -1,13 +1,15 @@
-      <table id='participants'>
+      <table id='participants'nowrap>
         <tr>
           <th>Who</th>
+          <th>Twitter</th>
           <th>Blog link</th>
           <th>Start Week</th>
         </tr>
 % for u in sorted(userlist, key=lambda u:u.username):
         <tr>
-          <td><tt> ${u.username} </tt></td>
-          <td>
+          <td align="left" valign="top">${u.name}</td>
+          <td align="left" valign="top"><a href="https://twitter.com/#!/${u.username}">@${u.username}</a></td>
+          <td align="left" valign="top">
            % if u.links:
             % for a in u.links:
            <a href="${a[1]}">${a[0]}</a>
@@ -16,7 +18,8 @@
              Undecided
            % endif
           </td>
-          <td> ${u.start} </td>
+          <td align="left" valign="top"> ${u.start_de} </td>
+
         </tr>
 % endfor
       </table>
