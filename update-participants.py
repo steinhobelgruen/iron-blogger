@@ -7,10 +7,10 @@ import xmlrpclib
 import subprocess
 
 
-XMLRPC_ENDPOINT = 'http://iron-blogger.mit.edu/xmlrpc.php'
-USER            = 'nelhage'
-BLOG_ID         = 1
-PAGE_ID         = 16
+XMLRPC_ENDPOINT = 'http://blog-URL.tld/xmlrpc.php'  # Wordpress RPC-URL - e.g. http://chaosblog.wordpress.com/xmlrpc.php
+USER            = 'username'  # wordpress-username
+BLOG_ID         = 0
+PAGE_ID         = 12
 
 try:
     subprocess.call(['stty', '-echo'])
