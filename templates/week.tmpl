@@ -1,8 +1,8 @@
 Results for week beginning ${week_start.strftime("%F")}
-<h2>People who posted</h2>
+<h2>Who posted:</h2>
 <dl>
 % for u in sorted(good, key=lambda u:u.username):
-<dt><span class="user">${u.username}:</span></dt>
+<dt><span class="user"><strong>${u.name} - </strong><a href="https://twitter.com/#!/${u.username}">@${u.username}</a>:</span></dt>
 <dd>
   <ul>
  % for p in u.weeks[week]:
@@ -13,15 +13,15 @@ Results for week beginning ${week_start.strftime("%F")}
 % endfor
 </dl>
 
-<h2>People who failed to post</h2>
+<h2>Slackers:</h2>
 <ul>
 % for u in sorted(lame, key=lambda u:u.username):
-<li class="user">${u.username}</li>
+<li class="user"><strong>${u.name} </strong>- <a href="https://twitter.com/#!/${u.username}">@${u.username}</a></li>
 % endfor
 </ul>
 
 % if punt:
-<h2>People punted for excessive outstanding balances:</h2>
+<h2>Who was punted for outstanding balances:</h2>
 <ul>
 % for u in sorted(punt):
 <li class="user">${u}</li>
@@ -30,30 +30,30 @@ Results for week beginning ${week_start.strftime("%F")}
 % endif
 
 % if skip:
-<h2>People who have not yet started</h2>
+<h2>Who haven't started yet:</h2>
 <ul>
 % for u in sorted(skip, key=lambda u:u.username):
-  <li class="user">${u.username}</li>
+  <li class="user"><strong>${u.name} </strong>- <a href="https://twitter.com/#!/${u.username}">@${u.username}</a></li>
 % endfor
 </ul>
 % endif
 
-<h2>Beer pool:</h2>
-<table>
-  <tr> <td> This week: </td> <td> $${5 * len(lame)} </td> </tr>
-  <tr> <td> Total: </td> <td> $${pool} </td> </tr>
-  <tr> <td> Paid: </td> <td> $${paid} </td> </tr>
+<h2>Beer fund:</h2>
+<table style="border-left-style:none; border-right-style:none;">
+  <tr> <td> This week: </td> <td> &euro; ${5 * len(lame)} </td> </tr>
+  <tr> <td> Total: </td> <td> &euro; ${pool} </td> </tr>
+  <tr> <td> Paid: </td> <td> &euro; ${paid} </td> </tr>
 </table>
 
 <h2>Debts:</h2>
 <% i = 0 %>
-<table class="debts">
+<table class="debts"  style="border-left-style:none; border-right-style:none;">
 % for (u, v) in sorted(debts, key=lambda p:p[1], reverse=True):
 % if i % 3 == 0:
 <tr>\
 % endif
 <% i += 1 %>\
-<td class="user">${u}</td> <td class="money">$${v}</td>\
+<td class="user">${u}</td> <td class="money">&euro; ${v}</td>\
 % if i % 3 == 0:
 </tr>
 %endif
