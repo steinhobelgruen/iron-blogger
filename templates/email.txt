@@ -1,6 +1,6 @@
 ## -*- coding: utf-8 -*-
 Subject: IRON BLOGGER results for the week beginning ${week_start.strftime("%F")}
-To: iron-blogger@mit.edu
+To: addyourmail@here
 
 SLACKERS: ${", ".join(sorted([u.username for u in lame]))}
 % if punt:
@@ -23,11 +23,11 @@ People who have not yet started:
 % endif
 
 Beer pool:
-This week: $${5 * len(lame)}.00
-Total:     $${pool}
-Paid:      $${paid}
+This week: € ${5 * len(lame)}
+Total:     € ${pool}
+Paid:      € ${paid}
 
 Individual debts:
 % for (u, v) in sorted(debts, key=lambda p:p[1], reverse=True):
-${"%20s $%d" % (u, v)}
+${u"%20s %d \u20AC" % (u, v)}
 % endfor
