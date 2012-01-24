@@ -1,0 +1,9 @@
+[general]
+mail=addyourmail@here
+start_date=YYYY/MM/DD
+
+[blogsettings]
+username=john_doe
+xmlrpc_endpoint=http://blog-URL.tld/xmlrpc.php
+blog_id=0
+participants_page_id=12
