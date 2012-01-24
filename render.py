@@ -8,9 +8,12 @@ import sys
 import os
 import os.path
 import subprocess
+import settings
 from mako.template import Template
 
-START = datetime.datetime(2011, 12, 25, 2)
+config=settings.load_settings()
+
+START = datetime.datetime.strptime(config['start_date'],"%Y/%m/%d")
 HERE  = os.path.dirname(__file__)
 
 def get_balance(acct):
