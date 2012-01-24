@@ -62,7 +62,7 @@ if not dry_run:
 
     x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
     x.metaWeblog.newPost(config['blog_id'], config['username'], passwd, page, True)
-email = render.render_template('templates/email.txt', date, punt=punt)
+email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
 
 if dry_run:
     print email
