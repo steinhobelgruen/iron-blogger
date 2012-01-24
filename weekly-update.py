@@ -7,10 +7,9 @@ import xmlrpclib
 import subprocess
 import datetime
 import yaml
+import settings
 
-XMLRPC_ENDPOINT = 'http://blog-URL.tld/xmlrpc.php' # Wordpress RPC-URL - e.g. http://chaosblog.wordpress.com/xmlrpc.php
-USER = 'username' # wordpress-username
-BLOG_ID         = 0
+config=settings.load_settings()
 
 dry_run = False
 
@@ -56,13 +55,13 @@ if not dry_run:
 
     try:
         subprocess.call(['stty', '-echo'])
-        passwd = raw_input("Password for %s: " % (USER,))
+        passwd = raw_input("Password for %s: " % (config['username'],))
         print
     finally:
         subprocess.call(['stty', 'echo'])
 
-    x = xmlrpclib.ServerProxy(XMLRPC_ENDPOINT)
-    x.metaWeblog.newPost(BLOG_ID, USER, passwd, page, True)
+    x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
+    x.metaWeblog.newPost(config['blog_id'], config['username'], passwd, page, True)
 email = render.render_template('templates/email.txt', date, punt=punt)
 
 if dry_run:
