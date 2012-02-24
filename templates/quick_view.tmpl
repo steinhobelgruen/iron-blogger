@@ -1,0 +1,23 @@
+## -*- coding: utf-8 -*-
+Subject: IRON BLOGGER results for the week beginning ${week_start.strftime("%F")}
+
+SLACKERS: ${", ".join(sorted([u.username for u in lame]))}
+% if punt:
+PUNTED for balance ≥$30: ${", ".join(sorted(punt))}
+% endif
+
+People who posted: ${", ".join(sorted([u.username for u in good]))}
+
+% if skip:
+People who have not yet started: ${", ".join(sorted([u.username for u in skip]))}
+% endif
+
+Beer pool:
+This week: € ${5 * len(lame)}
+Total:     € ${pool}
+Paid:      € ${paid}
+Events:    € ${event}
+Individual debts:
+% for (u, v) in sorted(debts, key=lambda p:p[1], reverse=True):
+${u"%20s %d \u20AC" % (u, v)}
+% endfor

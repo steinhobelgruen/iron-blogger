@@ -12,8 +12,14 @@ import settings
 config=settings.load_settings()
 
 dry_run = False
+quick_view = False
 
 args = sys.argv[1:]
+if args[0] == '-q':
+    dry_run = True
+    quick_view = True
+    args = args[1:]
+
 if args[0] == '-n':
     dry_run = True
     args = args[1:]
@@ -63,10 +69,12 @@ if not dry_run:
     x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
     x.metaWeblog.newPost(config['blog_id'], config['username'], passwd, page, True)
 email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
-
-if dry_run:
+quick = render.render_template('templates/quick_view.tmpl',date,punt=punt)
+if quick_view:
+    print quick
+if dry_run and not quick_view:
     print email
-else:
+if not dry_run:
     p = subprocess.Popen(['mutt', '-H', '/dev/stdin'],
                          stdin=subprocess.PIPE)
     p.communicate(email)
