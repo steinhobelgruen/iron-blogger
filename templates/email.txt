@@ -26,7 +26,7 @@ Beer pool:
 This week: € ${5 * len(lame)}
 Total:     € ${pool}
 Paid:      € ${paid}
-
+Events:    € ${event}
 Individual debts:
 % for (u, v) in sorted(debts, key=lambda p:p[1], reverse=True):
 ${u"%20s %d \u20AC" % (u, v)}

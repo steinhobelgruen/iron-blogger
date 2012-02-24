@@ -122,6 +122,7 @@ def render_template(path, week=None, **kwargs):
         week=week, week_start=week_start,week_end=week_end,
         good=good, lame=lame, skip=skip, userlist=userlist,
         pool=(get_balance('Pool')-get_balance('Event')), paid=get_balance('Pool:Paid'),
+        event=get_balance('Pool:Event'),
         debts=debts, **kwargs)
 
 if __name__ == '__main__':
