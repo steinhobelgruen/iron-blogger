@@ -121,7 +121,7 @@ def render_template(path, week=None, **kwargs):
     return Template(filename=path, output_encoding='utf-8').render(
         week=week, week_start=week_start,week_end=week_end,
         good=good, lame=lame, skip=skip, userlist=userlist,
-        pool=get_balance('Pool'), paid=get_balance('Pool:Paid'),
+        pool=(get_balance('Pool')-get_balance('Event')), paid=get_balance('Pool:Paid'),
         debts=debts, **kwargs)
 
 if __name__ == '__main__':
