@@ -69,9 +69,8 @@ if not dry_run:
     x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
     x.metaWeblog.newPost(config['blog_id'], config['username'], passwd, page, True)
 email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
-quick = render.render_template('templates/quick_view.tmpl',date,punt=punt)
 if quick_view:
-    print quick
+    print(render.render_template('templates/quick_view.tmpl',date,punt=punt))
 if dry_run and not quick_view:
     print email
 if not dry_run:
