@@ -6,6 +6,9 @@ import sys
 import os
 from dateutil.parser import parse
 import dateutil.tz as tz
+import settings
+
+config=settings.load_settings()
 
 with open('bloggers.yml') as f:
     users = yaml.safe_load(f.read())
@@ -18,7 +21,7 @@ try:
 except IOError:
     log = {}
 
-START = datetime.datetime(2011, 12, 25, 0)
+START = datetime.datetime.strptime(config['start_date'],'%Y/%m/%d')
 
 def parse_published(pub):
     try:
@@ -50,9 +53,14 @@ def parse_feeds(weeks, uri):
         while len(weeks) <= wn:
             weeks.append([])
 
-        post = dict(date=date,
-                    title=post.title,
-                    url=get_link(post))
+        if post.has_key('title'):
+            post = dict(date=date,
+                        title=post.title,
+                        url=get_link(post))
+        if not post.has_key('title'):
+            post = dict(date=date,
+                        title="",
+                        url=get_link(post))
         if post['url'] not in [p['url'] for p in weeks[wn]]:
             weeks[wn].append(post)
 
