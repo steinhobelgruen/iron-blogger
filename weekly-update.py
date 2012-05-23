@@ -78,7 +78,7 @@ if not dry_run:
                          stdin=subprocess.PIPE)
     p.communicate(email)
 
-if punt:
+if punt and not dry_run:
     with open('bloggers.yml') as b:
         bloggers = yaml.safe_load(b)
     for p in punt:
