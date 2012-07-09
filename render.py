@@ -22,9 +22,9 @@ def get_balance(acct):
                          stdout=subprocess.PIPE)
     (out, _) = p.communicate()
     try:
-	return int(out.split()[0][1:])
+        return int(out.split()[0][1:])
     except:
-	return 0
+        return 0
 
 def get_debts():
     p = subprocess.Popen(['ledger', '-f', os.path.join(HERE, 'ledger'),
@@ -80,6 +80,7 @@ def render_template(path, week=None, **kwargs):
     lame = []
     skip = []
     userlist = []
+    punted = []
 
     class User(object):
         pass
@@ -97,10 +98,15 @@ def render_template(path, week=None, **kwargs):
 
         userlist.append(u)
 
+        # create a subset of punted users
+        if u.end:
+            punted.append(u)
+
     def user_key(u):
         return (u.start, u.username)
 
     userlist.sort(key=user_key)
+    punted.sort(key=user_key)
 
     for u in userlist:
         user_start = parse(u.start, default=START)
@@ -123,7 +129,7 @@ def render_template(path, week=None, **kwargs):
         good=good, lame=lame, skip=skip, userlist=userlist,
         pool=(get_balance('Pool')-get_balance('Event')), paid=get_balance('Pool:Paid'),
         event=get_balance('Pool:Event'),
-        debts=debts, **kwargs)
+        debts=debts, punted=punted, **kwargs)
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
