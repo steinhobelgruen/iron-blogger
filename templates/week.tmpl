@@ -2,7 +2,11 @@ Results for week beginning ${week_start.strftime("%F")}
 <h2>Who posted:</h2>
 <dl>
 % for u in sorted(good, key=lambda u:u.username):
-<dt><span class="user"><strong>${u.name} - </strong><a href="https://twitter.com/#!/${u.username}">@${u.username}</a>:</span></dt>
+<dt><span class="user"><strong>${u.name} </strong> \
+  % if u.twitter != False:
+    <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+  % endif
+  :</span></dt>
 <dd>
   <ul>
  % for p in u.weeks[week]:
@@ -16,7 +20,11 @@ Results for week beginning ${week_start.strftime("%F")}
 <h2>Slackers:</h2>
 <ul>
 % for u in sorted(lame, key=lambda u:u.username):
-<li class="user"><strong>${u.name} </strong>- <a href="https://twitter.com/#!/${u.username}">@${u.username}</a></li>
+<li class="user"><strong>${u.name} </strong> \
+  % if u.twitter != False:
+    <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+  % endif
+</li>
 % endfor
 </ul>
 
@@ -33,7 +41,11 @@ Results for week beginning ${week_start.strftime("%F")}
 <h2>Who haven't started yet:</h2>
 <ul>
 % for u in sorted(skip, key=lambda u:u.username):
-  <li class="user"><strong>${u.name} </strong>- <a href="https://twitter.com/#!/${u.username}">@${u.username}</a></li>
+  <li class="user"><strong>${u.name} </strong> \
+  % if u.twitter != False:
+   - <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+  % endif
+  </li>
 % endfor
 </ul>
 % endif
@@ -63,10 +75,3 @@ Results for week beginning ${week_start.strftime("%F")}
 </tr>
 %endif
 </table>
-
-<h2>Previously Punted (pay &euro;30 to return):</h2>
-<ul>
-% for (u) in sorted(punted, key=lambda p:p.username):
-<li>${u.username} (${u.end})</li>
-% endfor
-</ul>
