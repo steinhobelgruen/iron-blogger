@@ -22,6 +22,13 @@ People who have not yet started:
 % endfor
 % endif
 
+% if skipped_users:
+People who are currently skipped:
+% for u in sorted(skipped_users,  key=lambda u:u.username):
+ ${u.username}
+% endfor
+% endif
+
 Beer pool:
 This week: € ${5 * len(lame)}
 Total:     € ${pool}

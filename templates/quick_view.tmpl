@@ -12,6 +12,10 @@ People who posted: ${", ".join(sorted([u.username for u in good]))}
 People who have not yet started: ${", ".join(sorted([u.username for u in skip]))}
 % endif
 
+% if skipped_users:
+People who are currently skipped: ${", ".join(sorted([u.username for u in skipped_users]))}
+% endif
+
 Beer pool:
 This week: € ${5 * len(lame)}
 Total:     € ${pool}
