@@ -79,6 +79,7 @@ def render_template(path, week=None, **kwargs):
     good = []
     lame = []
     skip = []
+    skipped_users = []
     userlist = []
     punted = []
 
@@ -94,6 +95,7 @@ def render_template(path, week=None, **kwargs):
         u.start_de = datetime.datetime.strptime(rec['start'],"%Y/%m/%d").strftime("%d.%m.%Y")
         u.start = rec['start']
         u.end   = rec.get('end')
+        u.stop  = rec.get('stop')
         u.skip  = parse_skip(rec)
         u.weeks = report.get(un, [])
 
@@ -111,11 +113,13 @@ def render_template(path, week=None, **kwargs):
 
     for u in userlist:
         user_start = parse(u.start, default=START)
+        if u.stop:
+            continue
         if u.end and parse(u.end, default=START) <= week_start:
             continue
 
         if should_skip(u.skip, week):
-            pass
+            skipped_users.append(u)
         elif user_start > week_start:
             skip.append(u)
         elif len(u.weeks) <= week or not u.weeks[week]:
@@ -127,7 +131,7 @@ def render_template(path, week=None, **kwargs):
 
     return Template(filename=path, output_encoding='utf-8').render(
         week=week, week_start=week_start,week_end=week_end,
-        good=good, lame=lame, skip=skip, userlist=userlist,
+        good=good, lame=lame, skip=skip, skipped_users=skipped_users, userlist=userlist,
         pool=(get_balance('Pool')-get_balance('Event')), paid=get_balance('Pool:Paid'),
         event=get_balance('Pool:Event'),
         debts=debts, punted=punted, **kwargs)
