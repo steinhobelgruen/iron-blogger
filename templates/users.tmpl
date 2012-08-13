@@ -4,6 +4,7 @@
           <th>Twitter</th>
           <th>Blog link</th>
           <th>Start Week</th>
+          <th>Skipped Weeks</th>
         </tr>
 % for u in sorted(userlist, key=lambda u:u.username):
         <tr>
@@ -23,6 +24,15 @@
            % endif
           </td>
           <td align="left" valign="top"> ${u.start_de} </td>
+          <td align="left" valign="top">
+          % if u.end:
+            Punted<br>
+          % endif
+          % if u.skip:
+            ${u.skip}
+          % endif
+          </td>
+
 
         </tr>
 % endfor

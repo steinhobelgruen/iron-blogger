@@ -51,7 +51,7 @@ Results for week beginning ${week_start.strftime("%F")}
 % endif
 
 % if skipped_users:
-<h2>Who is currently skipped::</h2>
+<h2>Who is currently skipped:</h2>
 <ul>
 % for u in sorted(skipped_users, key=lambda u:u.username):
   <li class="user"><strong>${u.name} </strong> \
