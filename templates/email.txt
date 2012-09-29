@@ -8,8 +8,8 @@ PUNTED for balance ≥$30: ${", ".join(sorted(punt))}
 % endif
 
 People who posted:
-% for u in sorted(good, key=lambda u:u.name[u.name.find(' '):].lower()):
- ${u.username}:
+% for u in sorted(good, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+ ${u.name} (${u.username}):
  % for p in u.weeks[week]:
  - ${p['url']}
  % endfor

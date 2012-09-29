@@ -58,15 +58,8 @@ if not dry_run:
 
     page = dict(title = title, description = body)
 
-    try:
-        subprocess.call(['stty', '-echo'])
-        passwd = raw_input("Password for %s: " % (config['username'],))
-        print
-    finally:
-        subprocess.call(['stty', 'echo'])
-
     x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
-    x.metaWeblog.newPost(config['blog_id'], config['username'], passwd, page, True)
+    x.metaWeblog.newPost(config['blog_id'], config['username'], config['password'], page, True)
 email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
 if quick_view:
     print(render.render_template('templates/quick_view.tmpl',date,punt=punt))

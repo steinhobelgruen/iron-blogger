@@ -1,35 +1,35 @@
-Results for week beginning ${week_start.strftime("%F")}
-<h2>Who posted:</h2>
+Zusammenfassung f&uuml;r die Woche ab ${week_start.strftime("%d.%m.%Y")}:
+<h3>Die Flei&szlig;igen:</h3>
 <dl>
-% for u in sorted(good, key=lambda u:u.username):
+% for u in sorted(good, key=lambda u:u.name[u.name.rfind(' '):].lower()):
 <dt><span class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-    <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
   % endif
   :</span></dt>
 <dd>
   <ul>
  % for p in u.weeks[week]:
-   <li><a href="${p['url']}">${p['title'] or "[untitled post]"}</a></li>
+   <li><a href="${p['url']}">${p['title'] or "[ohne Titel]"}</a></li>
  % endfor
   </ul>
 </dd>
 % endfor
 </dl>
 
-<h2>Slackers:</h2>
+<h3>Die Faulen:</h3>
 <ul>
-% for u in sorted(lame, key=lambda u:u.username):
+% for u in sorted(lame, key=lambda u:u.name[u.name.rfind(' '):].lower()):
 <li class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-    <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
   % endif
 </li>
 % endfor
 </ul>
 
 % if punt:
-<h2>Who was punted for outstanding balances:</h2>
+<h3>Ausgeschieden wegen zu hoher Schulden:</h3>
 <ul>
 % for u in sorted(punt):
 <li class="user">${u}</li>
@@ -38,12 +38,12 @@ Results for week beginning ${week_start.strftime("%F")}
 % endif
 
 % if skip:
-<h2>Who haven't started yet:</h2>
+<h3>Noch nicht dabei:</h3>
 <ul>
-% for u in sorted(skip, key=lambda u:u.username):
+% for u in sorted(skip, key=lambda u:u.name[u.name.rfind(' '):].lower()):
   <li class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-   - <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
   % endif
   </li>
 % endfor
@@ -51,27 +51,27 @@ Results for week beginning ${week_start.strftime("%F")}
 % endif
 
 % if skipped_users:
-<h2>Who is currently skipped:</h2>
+<h3>Gerade im Urlaub:</h3>
 <ul>
-% for u in sorted(skipped_users, key=lambda u:u.username):
+% for u in sorted(skipped_users, key=lambda u:u.name[u.name.rfind(' '):].lower()):
   <li class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-   - <a href="https://twitter.com/#!/${u.username}">@${u.username}</a> \
+    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
   % endif
   </li>
 % endfor
 </ul>
 % endif
 
-<h2>Beer fund:</h2>
+<h3>Kasse:</h3>
 <table style="border-left-style:none; border-right-style:none;">
-  <tr> <td> This week: </td> <td> &euro; ${5 * len(lame)} </td> </tr>
-  <tr> <td> Total: </td> <td> &euro; ${pool} </td> </tr>
-  <tr> <td> Paid: </td> <td> &euro; ${paid} </td> </tr>
-  <tr> <td> Events: </td> <td> &euro; ${event} </td> </tr>
+  <tr> <td> Diese Woche: </td> <td> ${5 * len(lame)}&nbsp;&euro; </td> </tr>
+  <tr> <td> Insgesamt: </td> <td> ${pool}&nbsp;&euro;</td> </tr>
+  <tr> <td> Beglichen: </td> <td> ${paid}&nbsp;&euro;</td> </tr>
+  <tr> <td> verfeiert: </td> <td> ${event}&nbsp;&euro;</td> </tr>
 </table>
 
-<h2>Debts:</h2>
+<h3>Schulden:</h3>
 <% i = 0 %>
 <table class="debts"  style="border-left-style:none; border-right-style:none;">
 % for (u, v) in sorted(debts, key=lambda p:p[1], reverse=True):
@@ -89,9 +89,9 @@ Results for week beginning ${week_start.strftime("%F")}
 %endif
 </table>
 
-<h2>Previously Punted (pay &euro;30 to return):</h2>
+<h3>Zuvor ausgeschieden (m&uuml;ssen 30 &euro; f&uuml;r den Wiedereinstieg bezahlen):</h3>
 <ul>
-% for (u) in sorted(punted, key=lambda p:p.username):
-<li>${u.username} (${u.end})</li>
+% for (u) in sorted(punted, key=lambda p:p.name[p.name.rfind(' '):].lower()):
+<li>${u.name} (seit ${u.end_de})</li>
 % endfor
 </ul>

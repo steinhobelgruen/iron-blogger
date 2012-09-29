@@ -103,6 +103,7 @@ def render_template(path, week=None, **kwargs):
 
         # create a subset of punted users
         if u.end:
+            u.end_de = datetime.datetime.strptime(rec.get('end'),"%Y/%m/%d").strftime("%d.%m.%Y")
             punted.append(u)
 
     def user_key(u):
