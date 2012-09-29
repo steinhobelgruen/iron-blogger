@@ -1,11 +1,92 @@
-chaosblog:
+ChemieEmma:
   links:
-  - [Chaosblog, 'http://chaosblog.wordpress.com/', 'http://chaosblog.wordpress.com/feed']
-  name: Marcus S.
-  start: 2012/01/01
-username:
+  - [dent in the world (Englisch), 'http://dentintheworld.com/', 'http://dentintheworld.com/feed/atom/']
+  name: Paula Schramm
+  start: 2012/09/24
+HubertMayer:
   links:
-  - [Blogname 01,'http://blog-URL.tld/']
-  - [Blogname 02,'http://blog-URL02.tld/']
-  name: Jon Doe
-  start: YYYY/MM/DD
+  - [Hubert Mayer - was mich so alles bewegt, 'http://hubert-mayer.de/', 'http://hubert-mayer.de/feed/']
+  name: Hubert Mayer
+  start: 2012/09/24
+TabTwo:
+  links:
+  - [Nerd Residenz, 'http://nerd-residenz.tumblr.com/', 'http://nerd-residenz.tumblr.com/rss']
+  name: Ralph Mayer
+  start: 2012/09/24
+affiliteur:
+  links:
+  - [Affiliteur, 'http://www.affiliteur.com/', 'http://www.affiliteur.com/feed/atom']
+  name: Sascha Schilling
+  start: 2012/09/24
+cmsfunk:
+  links:
+  - [Stattmarketing, 'http://stattmarketing.wordpress.com', 'http://stattmarketing.wordpress.com/feed/']
+  name: Christoph Funk
+  start: 2012/09/24
+dentaku:
+  links:
+  - [Dentaku, 'http://dentaku.wazong.de/', 'http://dentaku.wazong.de/category/blog/feed']
+  name: Thomas Renger
+  start: 2012/09/24
+dirkhaun:
+  links:
+  - [Dirks Hirnableiter, 'http://hirnableiter.tinycities.de/', 'http://hirnableiter.tinycities.de/feeds/hirnableiter.rss']
+  name: Dirk Haun
+  start: 2012/09/24
+gordongeisler:
+  links:
+  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  name: Gordon Geisler
+  start: 2012/12/31
+hirnrinde:
+  links:
+  - [Hirnrinde, 'http://www.hirnrinde.de', 'http://www.hirnrinde.de/hirnrinde.php']
+  name: Stefan Evertz
+  start: 2012/09/24
+idrottning:
+  links:
+  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  name: Viola Frankenberg
+  start: 2012/12/31
+jantheofel:
+  links:
+  - ["Jans K\xFCchenleben", 'http://www.theofel.de/plog/', 'http://www.theofel.de/plog/index.xml']
+  name: Jan Theofel
+  start: 2012/09/24
+musevg:
+  links:
+  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  name: Michael Schommer
+  start: 2012/12/31
+poster4nature:
+  links:
+  - [poster4nature, 'http://www.poster4nature.com/category/blog', 'http://www.poster4nature.com/category/blog/feed/']
+  name: Alexander Beck
+  start: 2012/09/24
+reichepoet:
+  links:
+  - [Der Reiche Poet, 'http://reichepoet.blogspot.de/', 'http://reichepoet.blogspot.com/feeds/posts/default']
+  name: "Ute M\xFCndlein"
+  start: 2012/09/24
+  twitter: false
+roadkill:
+  links:
+  - [Hinten beim Bier, 'http://www.hintenbeimbier.de/', 'http://www.hintenbeimbier.de/feed/']
+  name: Stefan Sommer
+  start: 2012/09/24
+spacedani:
+  links:
+  - [Danigee, 'http://www.danigee.de/', 'http://www.danigee.de/feed/']
+  name: Danijela Grgic
+  start: 2012/10/01
+sympatexter:
+  links:
+  - [Sympatexter, 'http://www.sympatexter.de/', 'http://www.sympatexter.de/feed']
+  name: "Judith B\xF6hm"
+  skip: [2012/10/15, 2012/11/10]
+  start: 2012/09/24
+werkstatt:
+  links:
+  - [Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/atom/']
+  name: Marc Scheloske
+  start: 2012/09/24

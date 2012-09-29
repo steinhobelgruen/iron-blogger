@@ -9,6 +9,7 @@ def load_settings():
     config['start_date']=configfile.get("general","start_date")
 
     config['username']=configfile.get("blogsettings","username")
+    config['password']=configfile.get("blogsettings","password")
     config['xmlrpc_endpoint']=configfile.get("blogsettings","xmlrpc_endpoint")
     config['blog_id']=configfile.get("blogsettings","blog_id")
     config['participants_page_id']=configfile.get("blogsettings","participants_page_id")

@@ -8,7 +8,7 @@ PUNTED for balance ≥$30: ${", ".join(sorted(punt))}
 % endif
 
 People who posted:
-% for u in sorted(good, key=lambda u:u.username):
+% for u in sorted(good, key=lambda u:u.name[u.name.find(' '):].lower()):
  ${u.username}:
  % for p in u.weeks[week]:
  - ${p['url']}
@@ -30,7 +30,7 @@ People who are currently skipped:
 % endif
 
 Beer pool:
-This week: € ${5 * len(lame)}
+This Week: € ${5 * len(lame)}
 Total:     € ${pool}
 Paid:      € ${paid}
 Events:    € ${event}
