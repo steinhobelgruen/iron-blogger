@@ -71,7 +71,7 @@ jantheofel:
 lakritzplanet:
   links:
   - [Lakritzplanet, 'http://www.lakritzplanet.de/', 'http://www.lakritzplanet.de/feed/']
-  name: Chritian Kaufmann
+  name: Christian Kaufmann
   start: 2012/09/24
 musevg:
   links:
@@ -99,6 +99,11 @@ roadkill:
   links:
   - [Hinten beim Bier, 'http://www.hintenbeimbier.de/', 'http://www.hintenbeimbier.de/feed/']
   name: Stefan Sommer
+  start: 2012/09/24
+schiri:
+  links:
+  - [Patrick Schneider, 'http://www.patrickschneider.net', 'http://www.patrickschneider.net/feed/']
+  name: Patrick Schneider
   start: 2012/09/24
 spacedani:
   links:
