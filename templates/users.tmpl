@@ -6,7 +6,7 @@
           <th>Start</th>
           <th>nicht gewertet</th>
         </tr>
-% for u in sorted(userlist, key=lambda u:u.name[u.name.find(' '):].lower()):
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
         <tr>
           <td align="left" valign="top">${u.name}</td>
           <td align="left" valign="top">
