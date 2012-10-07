@@ -76,8 +76,6 @@ def render_template(path, week=None, **kwargs):
     week_start = START + (week * datetime.timedelta(7))
     week_end   = START + ((week + 1) * datetime.timedelta(7))
 
-    good = []
-    lame = []
     skip = []
     skipped_users = []
     userlist = []
@@ -97,7 +95,9 @@ def render_template(path, week=None, **kwargs):
         u.end   = rec.get('end')
         u.stop  = rec.get('stop')
         u.skip  = parse_skip(rec)
-        u.weeks = report.get(un, [])
+        u.posts = report.get(un, {})
+	u.goodblogs = []
+	u.lameblogs = []
 
         userlist.append(u)
 
@@ -118,21 +118,25 @@ def render_template(path, week=None, **kwargs):
             continue
         if u.end and parse(u.end, default=START) <= week_start:
             continue
-
         if should_skip(u.skip, week):
             skipped_users.append(u)
+	    continue
         elif user_start > week_start:
             skip.append(u)
-        elif len(u.weeks) <= week or not u.weeks[week]:
-            lame.append(u)
-        else:
-            good.append(u)
+	    continue
+	for blog in u.links:
+	    b=blog[0]
+	    weeks=u.posts[b]
+            if len(weeks) <= week or not weeks[week]:
+                u.lameblogs.append(b)
+            else:
+                u.goodblogs.append(b)
 
     debts = get_debts()
 
     return Template(filename=path, output_encoding='utf-8').render(
         week=week, week_start=week_start,week_end=week_end,
-        good=good, lame=lame, skip=skip, skipped_users=skipped_users, userlist=userlist,
+        skip=skip, skipped_users=skipped_users, userlist=userlist,
         pool=(get_balance('Pool')-get_balance('Event')), paid=get_balance('Pool:Paid'),
         event=get_balance('Pool:Event'),
         debts=debts, punted=punted, **kwargs)

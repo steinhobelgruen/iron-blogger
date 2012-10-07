@@ -1,6 +1,8 @@
 # This Python file uses the following encoding: utf-8
-% for u in sorted(lame, key=lambda u:u.username):
-${week_end.strftime("%F")} Week ${week}
+% for u in sorted(userlist, key=lambda u:u.username):
+% for b in u.lameblogs:
+${week_end.strftime("%F")} Week ${week}, Blog ${b}
   User:${u.username}    $-5
   Pool:Owed:${u.username}
+% endfor
 % endfor
