@@ -43,6 +43,11 @@ dirkhaun:
   - [Dirks Hirnableiter, 'http://hirnableiter.tinycities.de/', 'http://hirnableiter.tinycities.de/feeds/hirnableiter.rss']
   name: Dirk Haun
   start: 2012/09/24
+erikschimmel:
+  links:
+  - [Erik Schimmel, 'http://erikschimmel.de/', 'http://erikschimmel.de/feed/']
+  name: Erik Schimmel
+  start: 2012/10/01
 gordongeisler:
   links:
   - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
@@ -75,9 +80,9 @@ lakritzplanet:
   start: 2012/09/24
 musevg:
   links:
-  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  - [Abenteuer im Musenland, 'http://www.outsourcer.de/', 'http://www.outsourcer.de/feed/']
   name: Michael Schommer
-  start: 2012/12/31
+  start: 2012/09/24
 pNachhaltig:
   links:
   - [praktisch Nachhaltig, 'http://praktisch-nachhaltig.de/news-und-presse/praktisch-nachhaltig-blog',
@@ -117,6 +122,6 @@ sympatexter:
   start: 2012/09/24
 werkstatt:
   links:
-  - [Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/atom/']
+  - [Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/']
   name: Marc Scheloske
   start: 2012/09/24
