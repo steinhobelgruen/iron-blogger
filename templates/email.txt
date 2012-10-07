@@ -2,16 +2,25 @@
 Subject: IRON BLOGGER results for the week beginning ${week_start.strftime("%F")}
 To: ${mail}
 
-SLACKERS: ${", ".join(sorted([u.username for u in lame]))}
+SLACKERS:
+<% lame=0 %>
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+ % for b in u.lameblogs:
+ <% lame+=1 %> - ${u.name} in ${b}
+ % endfor
+% endfor
+
 % if punt:
 PUNTED for balance ≥$30: ${", ".join(sorted(punt))}
 % endif
 
 People who posted:
-% for u in sorted(good, key=lambda u:u.name[u.name.rfind(' '):].lower()):
- ${u.name} (${u.username}):
- % for p in u.weeks[week]:
- - ${p['url']}
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+ % for b in u.goodblogs:
+  ${u.name} in ${b} (${u.username}):
+  % for p in u.posts[b][week]:
+  - ${p['url']}
+  % endfor
  % endfor
 % endfor
 
@@ -30,7 +39,7 @@ People who are currently skipped:
 % endif
 
 Beer pool:
-This Week: € ${5 * len(lame)}
+This Week: € ${5 * lame}
 Total:     € ${pool}
 Paid:      € ${paid}
 Events:    € ${event}

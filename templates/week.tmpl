@@ -1,30 +1,48 @@
-Zusammenfassung f&uuml;r die Woche ab ${week_start.strftime("%d.%m.%Y")}:
+Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 <h3>Die Flei&szlig;igen:</h3>
 <dl>
-% for u in sorted(good, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+% for g in u.goodblogs:
+% for b in u.links:
+% if b[0] == g:
 <dt><span class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
+    (@<a href="http://twitter.com/${u.username}">${u.username}</a>) \
+  % endif
+  % if len(u.links) != 1:
+    in <a href="${b[2]}">${b[1]}</a> \
   % endif
   :</span></dt>
 <dd>
   <ul>
- % for p in u.weeks[week]:
+ % for p in u.posts[g][week]:
    <li><a href="${p['url']}">${p['title'] or "[ohne Titel]"}</a></li>
  % endfor
   </ul>
 </dd>
+% endif
+% endfor
+% endfor
 % endfor
 </dl>
 
-<h3>Die Faulen:</h3>
+<h3>Die Faulen:</h3> <% lame=0 %>
 <ul>
-% for u in sorted(lame, key=lambda u:u.name[u.name.rfind(' '):].lower()):
-<li class="user"><strong>${u.name} </strong> \
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+% for g in u.lameblogs:
+% for b in u.links:
+% if b[0] == g:
+<li class="user"><strong>${u.name} </strong> <% lame+=1 %> \
   % if u.twitter != False:
     @<a href="http://twitter.com/${u.username}">${u.username}</a> \
   % endif
+  % if len(u.links) != 1:
+    in <a href="${b[2]}">${b[1]}</a> \
+  % endif
 </li>
+% endif
+% endfor
+% endfor
 % endfor
 </ul>
 
@@ -65,9 +83,9 @@ Zusammenfassung f&uuml;r die Woche ab ${week_start.strftime("%d.%m.%Y")}:
 
 <h3>Kasse:</h3>
 <table style="border-left-style:none; border-right-style:none;">
-  <tr> <td> Diese Woche: </td> <td> ${5 * len(lame)}&nbsp;&euro; </td> </tr>
+  <tr> <td> Diese Woche: </td> <td> ${5 * lame}&nbsp;&euro; </td> </tr>
   <tr> <td> Insgesamt: </td> <td> ${pool}&nbsp;&euro;</td> </tr>
-  <tr> <td> Beglichen: </td> <td> ${paid}&nbsp;&euro;</td> </tr>
+  <tr> <td> beglichen: </td> <td> ${paid}&nbsp;&euro;</td> </tr>
   <tr> <td> verfeiert: </td> <td> ${event}&nbsp;&euro;</td> </tr>
 </table>
 
@@ -89,9 +107,11 @@ Zusammenfassung f&uuml;r die Woche ab ${week_start.strftime("%d.%m.%Y")}:
 %endif
 </table>
 
+% if punted:
 <h3>Zuvor ausgeschieden (m&uuml;ssen 30 &euro; f&uuml;r den Wiedereinstieg bezahlen):</h3>
 <ul>
 % for (u) in sorted(punted, key=lambda p:p.name[p.name.rfind(' '):].lower()):
 <li>${u.name} (seit ${u.end_de})</li>
 % endfor
 </ul>
+% endif

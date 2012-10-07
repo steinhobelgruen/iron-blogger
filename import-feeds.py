@@ -27,12 +27,12 @@ def fetch_links(url):
 
 for (name, u) in users.items():
     for e in u['links']:
-        (title, url) = e[0:2]
+        (title, url) = e[1:3]
         try:
-    	    e[0] = e[0].strip()
+    	    e[1] = e[1].strip()
     	except:
-    	    e[0] = e[0]
-        if len(e) == 3:
+    	    e[1] = e[1]
+        if len(e) == 4:
             continue
         link = fetch_links(url)
         if link:
