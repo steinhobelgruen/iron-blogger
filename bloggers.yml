@@ -1,127 +1,137 @@
 BarbaraHoisl:
   links:
-  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
   name: Barbara Hoisl
   start: 2012/12/31
 ChemieEmma:
   links:
-  - [dent in the world (Englisch), 'http://dentintheworld.com/', 'http://dentintheworld.com/feed/atom/']
+  - [dent, dent in the world (Englisch), 'http://dentintheworld.com/', 'http://dentintheworld.com/feed/atom/']
+  - [alpaka, the naked alpaca (Englisch), 'http://thenakedalpaca.com/', 'http://thenakedalpaca.com/feed/atom/']
   name: Paula Schramm
   start: 2012/09/24
 DVDtoday:
   links:
-  - [JKdigital, 'http://jkdigital.de/', 'http://jkdigital.de/feed/']
+  - [0, JKdigital, 'http://jkdigital.de/', 'http://jkdigital.de/feed/']
   name: "J\xFCrgen Kaiser"
   start: 2012/09/24
 HubertMayer:
   links:
-  - [Hubert Mayer, 'http://hubert-mayer.de/', 'http://hubert-mayer.de/feed/']
+  - [0, Hubert Mayer, 'http://hubert-mayer.de/', 'http://hubert-mayer.de/feed/']
+  - [testet, Hubert Testet, 'http://hubert-testet.de/', 'http://hubert-testet.de/feed/']
   name: Hubert Mayer
   start: 2012/09/24
 TabTwo:
   links:
-  - [Nerd Residenz, 'http://www.nerd-residenz.de/blog/', 'http://www.nerd-residenz.de/blog/index.atom']
+  - [0, Nerd Residenz, 'http://www.nerd-residenz.de/blog/', 'http://www.nerd-residenz.de/blog/index.atom']
   name: Ralph Mayer
   start: 2012/09/24
 affiliteur:
   links:
-  - [Affiliteur, 'http://www.affiliteur.com/', 'http://www.affiliteur.com/feed/atom']
+  - [0, Affiliate auf Partytour, 'http://www.affiliteur.com/', 'http://www.affiliteur.com/feed/atom']
   name: Sascha Schilling
   start: 2012/09/24
 cmsfunk:
   links:
-  - [Stattmarketing, 'http://stattmarketing.wordpress.com/', 'http://stattmarketing.wordpress.com/feed/']
+  - [0, Stattmarketing, 'http://stattmarketing.wordpress.com/', 'http://stattmarketing.wordpress.com/feed/']
   name: Christoph Funk
   start: 2012/09/24
 dentaku:
   links:
-  - [Dentaku, 'http://dentaku.wazong.de/', 'http://dentaku.wazong.de/category/blog/feed']
+  - [0, Dentaku, 'http://dentaku.wazong.de/', 'http://dentaku.wazong.de/category/blog/feed']
   name: Thomas Renger
   start: 2012/09/24
 dirkhaun:
   links:
-  - [Dirks Hirnableiter, 'http://hirnableiter.tinycities.de/', 'http://hirnableiter.tinycities.de/feeds/hirnableiter.rss']
+  - [0, Dirks Hirnableiter, 'http://hirnableiter.tinycities.de/', 'http://hirnableiter.tinycities.de/feeds/hirnableiter.rss']
+  - [1, The Mobile Presenter (Englisch), 'http://www.themobilepresenter.com/', 'http://www.themobilepresenter.com/feeds/themobilepresenter.rss']
   name: Dirk Haun
   start: 2012/09/24
 erikschimmel:
   links:
-  - [Erik Schimmel, 'http://erikschimmel.de/', 'http://erikschimmel.de/feed/']
+  - [0, Erik Schimmel, 'http://erikschimmel.de/', 'http://erikschimmel.de/feed/']
   name: Erik Schimmel
   start: 2012/10/01
 gordongeisler:
   links:
-  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
   name: Gordon Geisler
   start: 2012/12/31
 hirnrinde:
   links:
-  - [Hirnrinde, 'http://www.hirnrinde.de/', 'http://www.hirnrinde.de/hirnrinde.php']
+  - [0, Hirnrinde, 'http://www.hirnrinde.de/', 'http://www.hirnrinde.de/hirnrinde.php']
   name: Stefan Evertz
   start: 2012/09/24
 hoomygumb:
   links:
-  - [it's a hoomygumb, 'http://hoomygumb.com/', 'http://hoomygumb.com/feed/']
+  - [0, it's a hoomygumb, 'http://hoomygumb.com/', 'http://hoomygumb.com/feed/']
   name: Jay F. Kay
   start: 2012/09/24
 idrottning:
   links:
-  - [(blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
+  - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
   name: Viola Frankenberg
   start: 2012/12/31
 jantheofel:
   links:
-  - ["Jans K\xFCchenleben", 'http://www.theofel.de/plog/', 'http://www.theofel.de/plog/index.xml']
+  - [0, "Jans K\xFCchenleben", 'http://www.theofel.de/plog/', 'http://www.theofel.de/plog/index.xml']
   name: Jan Theofel
   start: 2012/09/24
 lakritzplanet:
   links:
-  - [Lakritzplanet, 'http://www.lakritzplanet.de/', 'http://www.lakritzplanet.de/feed/']
+  - [0, Lakritzplanet, 'http://www.lakritzplanet.de/', 'http://www.lakritzplanet.de/feed/']
   name: Christian Kaufmann
   start: 2012/09/24
 musevg:
   links:
-  - [Abenteuer im Musenland, 'http://www.outsourcer.de/', 'http://www.outsourcer.de/feed/']
+  - [0, Abenteuer im Musenland, 'http://www.outsourcer.de/', 'http://www.outsourcer.de/feed/']
+  - [b2s, Brain 2 Shirt, 'http://www.2shirt.org', 'http://www.2shirt.org/feed/atom/']
+  - [allesso, Alles so, 'http://www.alles.so/', 'http://www.alles.so/feed/']
   name: Michael Schommer
   start: 2012/09/24
 pNachhaltig:
   links:
-  - [praktisch Nachhaltig, 'http://praktisch-nachhaltig.de/news-und-presse/praktisch-nachhaltig-blog',
+  - [0, praktisch Nachhaltig, 'http://praktisch-nachhaltig.de/news-und-presse/praktisch-nachhaltig-blog',
     'http://staging.wazong.de/feed/']
   name: "Franziska K\xF6ppe"
   start: 2012/12/31
 poster4nature:
   links:
-  - [poster4nature, 'http://www.poster4nature.com/category/blog/', 'http://www.poster4nature.com/category/blog/feed/']
+  - [0, poster4nature, 'http://www.poster4nature.com/category/blog/', 'http://www.poster4nature.com/category/blog/feed/']
   name: Alexander Beck
   start: 2012/09/24
 reichepoet:
   links:
-  - [Der Reiche Poet, 'http://reichepoet.blogspot.de/', 'http://reichepoet.blogspot.com/feeds/posts/default']
+  - [0, Der Reiche Poet, 'http://reichepoet.blogspot.de/', 'http://reichepoet.blogspot.com/feeds/posts/default']
   name: "Ute M\xFCndlein"
   start: 2012/09/24
   twitter: false
 roadkill:
   links:
-  - [Hinten beim Bier, 'http://www.hintenbeimbier.de/', 'http://www.hintenbeimbier.de/feed/']
+  - [0, Hinten beim Bier, 'http://www.hintenbeimbier.de/', 'http://www.hintenbeimbier.de/feed/']
   name: Stefan Sommer
   start: 2012/09/24
 schiri:
   links:
-  - [Patrick Schneider, 'http://www.patrickschneider.net', 'http://www.patrickschneider.net/feed/']
+  - [0, Patrick Schneider, 'http://www.patrickschneider.net', 'http://www.patrickschneider.net/feed/']
   name: Patrick Schneider
   start: 2012/09/24
 spacedani:
   links:
-  - [Danigee, 'http://www.danigee.de/', 'http://www.danigee.de/feed/']
+  - [0, Danigee, 'http://www.danigee.de/', 'http://www.danigee.de/feed/']
   name: Danijela Grgic
   start: 2012/10/01
 sympatexter:
   links:
-  - [Sympatexter, 'http://www.sympatexter.de/', 'http://www.sympatexter.de/feed']
+  - [0, Sympatexter, 'http://www.sympatexter.de/', 'http://www.sympatexter.de/feed']
   name: "Judith B\xF6hm"
   start: 2012/09/24
 werkstatt:
   links:
-  - [Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/']
+  - [0, Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/']
   name: Marc Scheloske
   start: 2012/09/24
+wunschgeburt:
+  links:
+  - [0, Wunschgeburt, 'http://www.wunschgeburt.de/weblog/', 'http://www.wunschgeburt.de/feed/']
+  name: Mika Kienberger
+  start: 2012/10/08
