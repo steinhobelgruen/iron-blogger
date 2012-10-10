@@ -34,7 +34,7 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 % if b[0] == g:
 <li class="user"><strong>${u.name} </strong> <% lame+=1 %> \
   % if u.twitter != False:
-    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
+    (@<a href="http://twitter.com/${u.username}">${u.username}</a>) \
   % endif
   % if len(u.links) != 1:
     in <a href="${b[2]}">${b[1]}</a> \
@@ -61,7 +61,7 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 % for u in sorted(skip, key=lambda u:u.name[u.name.rfind(' '):].lower()):
   <li class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
+    (@<a href="http://twitter.com/${u.username}">${u.username}</a>) \
   % endif
   </li>
 % endfor
@@ -74,7 +74,7 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 % for u in sorted(skipped_users, key=lambda u:u.name[u.name.rfind(' '):].lower()):
   <li class="user"><strong>${u.name} </strong> \
   % if u.twitter != False:
-    @<a href="http://twitter.com/${u.username}">${u.username}</a> \
+    (@<a href="http://twitter.com/${u.username}">${u.username}</a>) \
   % endif
   </li>
 % endfor
@@ -83,8 +83,8 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 
 <h3>Kasse:</h3>
 <table style="border-left-style:none; border-right-style:none;">
-  <tr> <td> Diese Woche: </td> <td> ${5 * lame}&nbsp;&euro; </td> </tr>
-  <tr> <td> Insgesamt: </td> <td> ${pool}&nbsp;&euro;</td> </tr>
+  <tr> <td> diese Woche: </td> <td> ${5 * lame}&nbsp;&euro; </td> </tr>
+  <tr> <td> insgesamt: </td> <td> ${pool}&nbsp;&euro;</td> </tr>
   <tr> <td> beglichen: </td> <td> ${paid}&nbsp;&euro;</td> </tr>
   <tr> <td> verfeiert: </td> <td> ${event}&nbsp;&euro;</td> </tr>
 </table>
@@ -97,7 +97,7 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 <tr>\
 % endif
 <% i += 1 %>\
-<td class="user">${u}</td> <td class="money">&euro; ${v}</td>\
+<td class="user">${u}</td> <td class="money">${v}&nbsp;&euro;</td>\
 % if i % 3 == 0:
 </tr>
 %endif
@@ -108,7 +108,7 @@ Zusammenfassung der Woche ab ${week_start.strftime("%d.%m.%Y")}:
 </table>
 
 % if punted:
-<h3>Zuvor ausgeschieden (m&uuml;ssen 30 &euro; f&uuml;r den Wiedereinstieg bezahlen):</h3>
+<h3>Zuvor ausgeschieden (m&uuml;ssen 30&nbsp;&euro; f&uuml;r den Wiedereinstieg bezahlen):</h3>
 <ul>
 % for (u) in sorted(punted, key=lambda p:p.name[p.name.rfind(' '):].lower()):
 <li>${u.name} (seit ${u.end_de})</li>
