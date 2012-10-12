@@ -1,4 +1,6 @@
 ## -*- coding: utf-8 -*-
+From: ${mail}
+Content-Type: text/plain; charset=utf-8
 Subject: IRON BLOGGER results for the week beginning ${week_start.strftime("%F")}
 To: ${mail}
 

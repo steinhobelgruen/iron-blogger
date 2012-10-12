@@ -1,0 +1,44 @@
+## -*- coding: utf-8 -*-
+From: ${mail}
+Content-Type: text/plain; charset=utf-8
+Subject: Iron Blogger Erinnerung: noch kein Beitrag in der Woche ab ${week_start.strftime("%d.%m.%Y")}:
+To: \
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+% if len(u.lameblogs)>0:
+${u.mail}, \
+% endif
+% endfor
+
+
+Hallo liebe Blogger,
+
+ich habe gesehen, dass die folgenden Benutzer in dieser Woche noch nichts
+geschrieben haben:
+
+% for u in sorted(userlist, key=lambda u:u.name[u.name.rfind(' '):].lower()):
+% for g in u.lameblogs:
+% for b in u.links:
+% if b[0] == g:
+* ${u.name} \
+  % if u.twitter != False:
+(@${u.username}) \
+  % endif
+  % if len(u.links) != 1:
+in ${b[1]} \
+  % endif
+
+% endif
+% endfor
+% endfor
+% endfor
+% if punt:
+
+Achtung, Gefahr des Ausscheidens wegen zu hoher Schulden:
+% for u in sorted(punt):
+* ${u}
+% endfor
+% endif
+
+Besorgt,
+-- 
+Der Iron Blogger Bot

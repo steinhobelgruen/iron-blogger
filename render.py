@@ -88,6 +88,7 @@ def render_template(path, week=None, **kwargs):
         u = User()
         u.username = un
         u.name  = rec['name']
+        u.mail  = rec['mail']
         u.links = rec['links']
         u.twitter = rec.get('twitter')
         u.start_de = datetime.datetime.strptime(rec['start'],"%Y/%m/%d").strftime("%d.%m.%Y")

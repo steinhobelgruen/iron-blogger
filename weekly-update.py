@@ -12,17 +12,28 @@ import settings
 config=settings.load_settings()
 
 dry_run = False
+send_mail = True
 quick_view = False
+reminder = False
 
 args = sys.argv[1:]
-if args[0] == '-q':
-    dry_run = True
-    quick_view = True
-    args = args[1:]
 
-if args[0] == '-n':
-    dry_run = True
-    args = args[1:]
+if len(args)>0:
+    if args[0] == '-q':
+        dry_run = True
+        quick_view = True
+	send_mail = False
+        args = args[1:]
+
+    if args[0] == '-r':
+        dry_run = True
+        reminder = True
+        args = args[1:]
+
+    if args[0] == '-n':
+        dry_run = True
+	send_mail = False
+        args = args[1:]
 
 date = args[0]
 
@@ -60,13 +71,17 @@ if not dry_run:
 
     x = xmlrpclib.ServerProxy(config['xmlrpc_endpoint'])
     x.metaWeblog.newPost(config['blog_id'], config['username'], config['password'], page, True)
-email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
+if not reminder:
+    email = render.render_template('templates/email.txt', date, punt=punt,mail=config['mail'])
+else:
+    email = render.render_template('templates/reminder.txt', date, punt=punt,mail=config['mail'])
 if quick_view:
     print(render.render_template('templates/quick_view.tmpl',date,punt=punt))
 if dry_run and not quick_view:
     print email
-if not dry_run:
-    p = subprocess.Popen(['mutt', '-H', '/dev/stdin'],
+if send_mail:
+    # p = subprocess.Popen(['mutt', '-H', '/dev/stdin'],
+    p = subprocess.Popen(['/usr/sbin/sendmail', '-oi', '-t'],
                          stdin=subprocess.PIPE)
     p.communicate(email)
 
