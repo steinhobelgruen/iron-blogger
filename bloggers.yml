@@ -1,163 +1,170 @@
 BarbaraHoisl:
   links:
-  - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
-  name: Barbara Hoisl
+  - [0, barbara's blog, 'http://www.barbarahoisl.com/', 'http://www.barbarahoisl.com/feed/']
   mail: barbara@barbarahoisl.com
-  start: 2012/12/31
+  name: Barbara Hoisl
+  start: 2012/10/08
 ChemieEmma:
   links:
   - [dent, dent in the world (Englisch), 'http://dentintheworld.com/', 'http://dentintheworld.com/feed/atom/']
   - [alpaka, the naked alpaca (Englisch), 'http://thenakedalpaca.com/', 'http://thenakedalpaca.com/feed/atom/']
-  name: Paula Schramm
   mail: missp@dentintheworld.com
+  name: Paula Schramm
   start: 2012/09/24
 DVDtoday:
   links:
   - [0, JKdigital, 'http://jkdigital.de/', 'http://jkdigital.de/feed/']
-  name: "J\xFCrgen Kaiser"
   mail: jk@jkplus.de
+  name: "J\xFCrgen Kaiser"
   start: 2012/09/24
 HubertMayer:
   links:
   - [0, Hubert Mayer, 'http://hubert-mayer.de/', 'http://hubert-mayer.de/feed/']
   - [testet, Hubert Testet, 'http://hubert-testet.de/', 'http://hubert-testet.de/feed/']
-  name: Hubert Mayer
   mail: mayerwerbung@gmx.de
+  name: Hubert Mayer
   start: 2012/09/24
 TabTwo:
   links:
   - [0, Nerd Residenz, 'http://www.nerd-residenz.de/blog/', 'http://www.nerd-residenz.de/blog/index.atom']
-  name: Ralph Mayer
   mail: rmayer@nerd-residenz.de
+  name: Ralph Mayer
   start: 2012/09/24
 affiliteur:
   links:
   - [0, Affiliate auf Partytour, 'http://www.affiliteur.com/', 'http://www.affiliteur.com/feed/atom']
-  name: Sascha Schilling
   mail: info@affiliteur.com
+  name: Sascha Schilling
   start: 2012/09/24
 cmsfunk:
   links:
   - [0, Stattmarketing, 'http://stattmarketing.wordpress.com/', 'http://stattmarketing.wordpress.com/feed/']
-  name: Christoph Funk
   mail: christoph.funk28@gmail.com
+  name: Christoph Funk
   start: 2012/09/24
 dentaku:
   links:
   - [0, Dentaku, 'http://dentaku.wazong.de/', 'http://dentaku.wazong.de/category/blog/feed']
-  name: Thomas Renger
   mail: dentaku@wazong.de
+  name: Thomas Renger
   start: 2012/09/24
 dirkhaun:
   links:
   - [0, Dirks Hirnableiter, 'http://hirnableiter.tinycities.de/', 'http://hirnableiter.tinycities.de/feeds/hirnableiter.rss']
   - [1, The Mobile Presenter (Englisch), 'http://www.themobilepresenter.com/', 'http://www.themobilepresenter.com/feeds/themobilepresenter.rss']
-  name: Dirk Haun
   mail: dirk@haun-online.de
+  name: Dirk Haun
   start: 2012/09/24
 erikschimmel:
   links:
   - [0, Erik Schimmel, 'http://erikschimmel.de/', 'http://erikschimmel.de/feed/']
-  name: Erik Schimmel
   mail: mail@erikschimmel.de
+  name: Erik Schimmel
   start: 2012/10/01
 gordongeisler:
   links:
   - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
-  name: Gordon Geisler
   mail: gordon.geisler@freiarbeiter.com
+  name: Gordon Geisler
   start: 2012/12/31
 hirnrinde:
   links:
   - [0, Hirnrinde, 'http://www.hirnrinde.de/', 'http://www.hirnrinde.de/hirnrinde.php']
-  name: Stefan Evertz
   mail: stefan.evertz@gmail.com
+  name: Stefan Evertz
   start: 2012/09/24
 hoomygumb:
   links:
   - [0, it's a hoomygumb, 'http://hoomygumb.com/', 'http://hoomygumb.com/feed/']
-  name: Jay F. Kay
   mail: hoomygumb@gmail.com
+  name: Jay F. Kay
   start: 2012/09/24
 idrottning:
   links:
   - [0, (blog folgt), 'http://staging.wazong.de/', 'http://staging.wazong.de/feed/']
-  name: Viola Frankenberg
   mail: v.frankenberg@gmx.de
+  name: Viola Frankenberg
   start: 2012/12/31
 jantheofel:
   links:
   - [0, "Jans K\xFCchenleben", 'http://www.theofel.de/plog/', 'http://www.theofel.de/plog/index.xml']
-  name: Jan Theofel
+  - [1, Jans Technik-Blog, 'http://www.theofel.de/weblog/', 'http://www.theofel.de/weblog/index.xml']
   mail: jan@theofel.de
+  name: Jan Theofel
   start: 2012/09/24
 lakritzplanet:
   links:
   - [0, Lakritzplanet, 'http://www.lakritzplanet.de/', 'http://www.lakritzplanet.de/feed/']
-  name: Christian Kaufmann
   mail: mail@lakritzplanet.de
+  name: Christian Kaufmann
   start: 2012/09/24
+momstagebuch:
+  links:
+  - [0, Mom's Tagebuch, 'http://momstagebuch.blogspot.de', 'http://momstagebuch.blogspot.com/feeds/posts/default']
+  mail: hahn-elke@gmx.de
+  name: Elke Hahn
+  start: 2012/10/08
 musevg:
   links:
   - [0, Abenteuer im Musenland, 'http://www.outsourcer.de/', 'http://www.outsourcer.de/feed/']
   - [b2s, Brain 2 Shirt, 'http://www.2shirt.org', 'http://www.2shirt.org/feed/atom/']
   - [allesso, Alles so, 'http://www.alles.so/', 'http://www.alles.so/feed/']
-  name: Michael Schommer
   mail: iron@muse.vg
+  name: Michael Schommer
   start: 2012/09/24
 pNachhaltig:
   links:
   - [0, praktisch Nachhaltig, 'http://praktisch-nachhaltig.de/news-und-presse/praktisch-nachhaltig-blog',
     'http://staging.wazong.de/feed/']
-  name: "Franziska K\xF6ppe"
   mail: info@madiko.com
+  name: "Franziska K\xF6ppe"
   start: 2012/12/31
 poster4nature:
   links:
   - [0, poster4nature, 'http://www.poster4nature.com/category/blog/', 'http://www.poster4nature.com/category/blog/feed/']
-  name: Alexander Beck
   mail: partner@poster4nature.com
+  name: Alexander Beck
   start: 2012/09/24
 reichepoet:
   links:
   - [0, Der Reiche Poet, 'http://reichepoet.blogspot.de/', 'http://reichepoet.blogspot.com/feeds/posts/default']
-  name: "Ute M\xFCndlein"
   mail: ute.muendlein@10-o-clock.de
+  name: "Ute M\xFCndlein"
   start: 2012/09/24
   twitter: false
 roadkill:
   links:
   - [0, Hinten beim Bier, 'http://www.hintenbeimbier.de/', 'http://www.hintenbeimbier.de/feed/']
-  name: Stefan Sommer
   mail: st.sommer@gmail.com
+  name: Stefan Sommer
   start: 2012/09/24
 schiri:
   links:
   - [0, Patrick Schneider, 'http://www.patrickschneider.net', 'http://www.patrickschneider.net/feed/']
-  name: Patrick Schneider
   mail: info@patrickschneider.net
+  name: Patrick Schneider
   start: 2012/09/24
 spacedani:
   links:
   - [0, Danigee, 'http://www.danigee.de/', 'http://www.danigee.de/feed/']
-  name: Danijela Grgic
   mail: spacedani@gmail.com
+  name: Danijela Grgic
   start: 2012/10/01
 sympatexter:
   links:
   - [0, Sympatexter, 'http://www.sympatexter.de/', 'http://www.sympatexter.de/feed']
-  name: "Judith B\xF6hm"
   mail: boehm.judith@gmail.com
+  name: "Judith B\xF6hm"
   start: 2012/09/24
 werkstatt:
   links:
   - [0, Wissenswerkstatt, 'http://www.wissenswerkstatt.net/', 'http://www.wissenswerkstatt.net/feed/']
-  name: Marc Scheloske
   mail: marc.scheloske@gmail.com
+  name: Marc Scheloske
   start: 2012/09/24
 wunschgeburt:
   links:
   - [0, Wunschgeburt, 'http://www.wunschgeburt.de/weblog/', 'http://www.wunschgeburt.de/feed/']
-  name: Mika Kienberger
   mail: frau.kienberger@web.de
+  name: Mika Kienberger
   start: 2012/10/08
