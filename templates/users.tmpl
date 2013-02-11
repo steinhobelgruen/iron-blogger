@@ -4,7 +4,7 @@
           <th>Twitter</th>
           <th>Blog link</th>
           <th>Start Week</th>
-          <th>Skipped Weeks</th>
+          <th>&nbsp;</th>
         </tr>
 % for u in sorted(userlist, key=lambda u:u.username):
         <tr>
@@ -28,8 +28,8 @@
           % if u.end:
             Punted<br>
           % endif
-          % if u.skip:
-            ${u.skip}
+          % if u in skipped_users:
+            Skipped
           % endif
           </td>
 
