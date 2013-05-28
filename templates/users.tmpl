@@ -28,8 +28,8 @@
           % if u.end:
             Ausgeschieden<br>
           % endif
-          % if u.skip:
-            ${u.skip}
+          % if u in skipped_users:
+            Skipped
           % endif
           </td>
 
